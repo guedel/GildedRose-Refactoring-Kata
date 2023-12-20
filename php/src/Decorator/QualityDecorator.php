@@ -13,6 +13,8 @@ abstract class QualityDecorator
     ) {
     }
 
+    abstract public function update(): void;
+
     protected function decrease(): void
     {
         if ($this->item->quality > 0) {
@@ -26,6 +28,4 @@ abstract class QualityDecorator
             $this->item->quality++;
         }
     }
-
-    abstract public function update(): void;
 }

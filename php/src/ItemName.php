@@ -27,12 +27,11 @@ enum ItemName: string
     public static function getDecorator(Item $item): QualityDecorator
     {
         return match (static::getType($item)) {
-             static::AgedBrie => new AgedBrieDecorator($item),
-             static::BackstageToConcert => new BackstagePassDecorator($item),
-             static::Sulfuras => new EternalDecorator($item),
-             static::Conjured => new ConjuredDecorator($item),
-             default => new NormalDecorator($item)
+            static::AgedBrie => new AgedBrieDecorator($item),
+            static::BackstageToConcert => new BackstagePassDecorator($item),
+            static::Sulfuras => new EternalDecorator($item),
+            static::Conjured => new ConjuredDecorator($item),
+            default => new NormalDecorator($item)
         };
     }
 }
-
